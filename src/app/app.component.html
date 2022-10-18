@@ -1,1 +1,6 @@
-<p>Hello Phil</p>
+
+<div *ngIf="currentTrainingDay != undefined" class="main-container">
+    <p>Í dag er:  <span style="font-weight: bold;">{{currentTrainingDay.day}}</span></p>
+    <p *ngIf="currentTrainingDay.trainingToday" style="color: #d95067;">Ég er á æfingu í dag</p>
+    <p *ngIf="!currentTrainingDay.trainingToday" style="color: #50d98e;">Ég er ekki á æfingu í dag.</p>
+</div>

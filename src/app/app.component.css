@@ -1,0 +1,15 @@
+
+
+.main-container {
+    /* background-color: #e3e8e5; */
+    background-color: white;
+    width: 60%;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 50px;
+    padding: 5%;
+    margin-top: 10%;
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px; */
+    box-shadow: rgba(0, 0, 0, 0.05) 0px 6px 24px 0px, rgba(0, 0, 0, 0.08) 0px 0px 0px 1px;
+}
+
