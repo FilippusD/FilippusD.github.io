@@ -1,6 +1,22 @@
 
-<div *ngIf="currentTrainingDay != undefined" class="main-container">
+<!-- <div *ngIf="currentTrainingDay != undefined" class="main-container">
     <p>Í dag er:  <span style="font-weight: bold;">{{currentTrainingDay.day}}</span></p>
     <p *ngIf="currentTrainingDay.trainingToday" style="color: #d95067;">Ég er á æfingu í dag</p>
     <p *ngIf="!currentTrainingDay.trainingToday" style="color: #50d98e;">Ég er ekki á æfingu í dag.</p>
+</div> -->
+
+
+
+
+<div class="main-container" *ngIf="!submitClicked">
+    <h1>Hver er vigtin?</h1>
+    <div style="display: flex;align-items: center; justify-content: center;">
+    <input type="number" [(ngModel)]="weight" (keyup.enter)="calculate()">
+    <button type="button" (click)="calculate()" >Reikna</button>
+</div>
+</div>
+
+<div class="main-container" *ngIf="submitClicked">
+    <p *ngIf="hrikalegur" style="color: green;">Já, til hamingju. Þú ert hrikaleg/ur</p>
+    <p *ngIf="!hrikalegur" style="color: red;">Nei, borða meira</p>
 </div>

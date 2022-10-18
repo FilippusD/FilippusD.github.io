@@ -1,38 +1,65 @@
 import { Component, OnInit } from '@angular/core';
 
 @Component({
-  selector: 'app-root',
-  templateUrl: './app.component.html',
-  styleUrls: ['./app.component.css']
+	selector: 'app-root',
+	templateUrl: './app.component.html',
+	styleUrls: ['./app.component.css']
 })
 
 
 export class AppComponent implements OnInit {
-  title = 'trainingday-tracker';
+	
 
-  private trainingDays: Training[] = [
-    {day: "sunnudagur", trainingToday: false},
-    {day: "mánudagur", trainingToday: true},
-    {day: "þriðjudagur", trainingToday: false},
-    {day: "miðvikudagur", trainingToday: true},
-    {day: "fimmtudagur", trainingToday: false},
-    {day: "föstudagur", trainingToday: true},
-    {day: "laugardagur", trainingToday: true}]
+	// private trainingDays: Training[] = [
+	//   {day: "sunnudagur", trainingToday: false},
+	//   {day: "mánudagur", trainingToday: true},
+	//   {day: "þriðjudagur", trainingToday: false},
+	//   {day: "miðvikudagur", trainingToday: true},
+	//   {day: "fimmtudagur", trainingToday: false},
+	//   {day: "föstudagur", trainingToday: true},
+	//   {day: "laugardagur", trainingToday: true}]
 
-    currentTrainingDay: Training
+	//   currentTrainingDay: Training
 
 
-  ngOnInit() {
+	// ngOnInit() {
 
-    const d = new Date();
-    let currentDay = this.trainingDays[d.getDay()];
+	//   const d = new Date();
+	//   let currentDay = this.trainingDays[d.getDay()];
 
-    this.currentTrainingDay = currentDay
-  }
+	//   this.currentTrainingDay = currentDay
+	// }
+
+
+	//hrikalegur block
+	weight: number
+	hrikalegur: boolean
+
+	submitClicked:boolean = false
+
+	ngOnInit(): void {
+
+	}
+
+	calculate() {
+		this.submitClicked = true
+		if(this.weight > 105) {
+			this.hrikalegur = true
+		} else {
+			this.hrikalegur = false
+		}
+	}
+
+
 }
 
 
+
+
+
+
+
 export class Training {
-  day: string;
-  trainingToday: boolean;
+	day: string;
+	trainingToday: boolean;
 }
